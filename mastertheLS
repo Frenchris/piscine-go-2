@@ -1,1 +1,1 @@
-ls -tc -p | tr '\n' ', '
+ls -tc -p -m
