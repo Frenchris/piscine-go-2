@@ -1,1 +1,1 @@
-curl -s htpps://api.github.com/users/OGordoo | jq -r ".id"
+curl -s https://api.github.com/users/OGordoo | jq -r ".id"
