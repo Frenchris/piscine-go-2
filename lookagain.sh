@@ -1,1 +1,0 @@
-ls -R | grep '.*[.]sh' | cut -d "." -f1 | sort -r
