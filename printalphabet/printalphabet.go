@@ -1,6 +1,12 @@
 package main
 
-function main(){
+import (
+	"github.com/01-edu/z01"
+)
 
-	fmt.Println("abcdefghijklmnopqrstuvwxyz")
+func main() {
+	for i := 'a'; i < '{'; i++ {
+		z01.PrintRune(i)
+	}
+	z01.PrintRune('\n')
 }
