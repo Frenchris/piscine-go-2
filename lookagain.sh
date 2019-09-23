@@ -1,1 +1,1 @@
-find -name '*.sh' | cut -d "." -f2 | cut -d "/" -f2
+ls -R | grep '.*[.]sh' | cut -d "." -f1
