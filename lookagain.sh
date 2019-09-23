@@ -1,1 +1,1 @@
-ls -R | grep '.*[.]sh' | cut -d "." -f1 | sort
+ls -R | grep '.*[.]sh' | cut -d "." -f1 | sort -r
