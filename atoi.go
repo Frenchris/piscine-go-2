@@ -41,6 +41,10 @@ func Atoi(s string) int{
 			}
 		} 
 			
+		if stri[0] == 45 {
+			res *= -1
+		}
+
 			return res
 
 }
