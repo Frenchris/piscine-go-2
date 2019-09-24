@@ -1,6 +1,10 @@
 package piscine
 
 func Atoi(s string) int{
+	if s == ""{
+		return 0
+	}
+	
 	stri := []rune(s)
 
 	res:=0
