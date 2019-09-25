@@ -4,14 +4,14 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func Raid1a(x,y int){
+func Raid1d(x,y int){
 	
-	cantoEsqSup := 'o'
-	cantoDirSup := 'o'
-	cantoEsqInf := 'o'
-	cantoDirInf := 'o'
-	ladosHor := '-'
-	ladosVer := '|'
+	cantoEsqSup := 'A'
+	cantoDirSup := 'C'
+	cantoEsqInf := 'A'
+	cantoDirInf := 'C'
+	ladosHor := 'B'
+	ladosVer := 'B'
 
 
 	if x==1 && y==1{
