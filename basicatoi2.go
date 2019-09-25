@@ -6,7 +6,7 @@ func BasicAtoi2(s string) int{
 	res:=0
 
 	for i := 0; i < StrLength(s) ; i++  {
-
+		
 		if '0' <= stri[i] && stri[i] <= '9'{
 			exp:= StrLength(s) - 1 - i
 			if stri[i] == '0'{
