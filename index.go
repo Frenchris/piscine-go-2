@@ -22,6 +22,9 @@ func Index(s string, toFind string) int {
 				i = 0
 				return pos
 			}
+		} else if count > 0 {
+			count = 0
+			i = 0
 		}
 	}
 
