@@ -15,10 +15,10 @@ func Atoi(s string) int{
 	}else{
 		offset = 0
 	}
-		for i := offset; i < StrLength(s) ; i++  {
+		for i := offset; i < StrLen(s) ; i++  {
 			
 			if '0' <= stri[i] && stri[i] <= '9'{
-				exp:= StrLength(s) - 1 - i
+				exp:= StrLen(s) - 1 - i
 				if stri[i] == '0'{
 					res += 0 * Power(10,exp) 
 			} else if stri[i] == '1'{

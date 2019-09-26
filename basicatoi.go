@@ -5,8 +5,8 @@ func BasicAtoi(s string) int{
 
 	res:=0
 
-	for i := 0; i < StrLength(s) ; i++  {
-			exp:= StrLength(s) - 1 - i
+	for i := 0; i < StrLen(s) ; i++  {
+			exp:= StrLen(s) - 1 - i
 			if stri[i] == '0'{
 				res += 0 * Power(10,exp) 
 			} else if stri[i] == '1'{
