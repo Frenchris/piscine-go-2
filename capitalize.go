@@ -16,6 +16,11 @@ func Capitalize(s string) string {
 					str[i+1] -= 32
 				}
 			}
+			if i != StrLen(s)-1 {
+				if str[i+1] >= 65 && str[i+1] <= 90 {
+					str[i+1] += 32
+				}
+			}
 		}
 	}
 	return string(str)
