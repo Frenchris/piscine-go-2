@@ -28,6 +28,8 @@ func Index(s string, toFind string) int {
 			} else if count > 0 {
 				count = 0
 				i = 0
+				firstLetter = 0
+				j--
 			}
 		}
 
