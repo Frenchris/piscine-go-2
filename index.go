@@ -9,30 +9,34 @@ func Index(s string, toFind string) int {
 	pos := 0
 	firstLetter := 0
 
-	for j := 0; j < StrLen(s); j++ {
-		if sArr[j] == toFindArr[i] {
-			count++
-			if firstLetter == 0 {
-				pos = j
-				firstLetter++
-			}
-			i++
+	if toFind == "" {
+		return 0
+	} else {
+		for j := 0; j < StrLen(s); j++ {
+			if sArr[j] == toFindArr[i] {
+				count++
+				if firstLetter == 0 {
+					pos = j
+					firstLetter++
+				}
+				i++
 
-			if count == StrLen(toFind) {
+				if count == StrLen(toFind) {
+					i = 0
+					return pos
+				}
+			} else if count > 0 {
+				count = 0
 				i = 0
-				return pos
 			}
-		} else if count > 0 {
-			count = 0
-			i = 0
 		}
-	}
 
-	if count == 0 {
-		pos = -1
-	}
+		if count == 0 {
+			pos = -1
+		}
 
-	return pos
+		return pos
+	}
 
 	// sArr := []rune(s)
 	// toFindArr := []rune(toFind)
