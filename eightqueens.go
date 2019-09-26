@@ -4,16 +4,12 @@ import (
 	"github.com/01-edu/z01"
 )
 
-//size of the board of chees
-const size = 8
-
-//basically the board, inicializado a false
-var board [size][size]int
+var board [8][8]int
 
 func EightQueens() {
-	for x := 0; x < size; x++ {
-		for y := 0; y < size; y++ {
-			board[x][y] = y + 1
+	for i := 0; i < 8; i++ {
+		for j := 0; j < 8; j++ {
+			board[i][j] = j + 1
 		}
 	}
 
@@ -22,16 +18,16 @@ func EightQueens() {
 }
 
 func seeColumn(row int, col int) {
-	for col < size {
+	for col < 8 {
 		if seeQueen(row, col) {
-			save := board[row][col]
+			previous := board[row][col]
 			board[row][col] = 0
 
-			if row == size-1 {
-				for x := 0; x < size; x++ {
-					for y := 0; y < size; y++ {
-						if board[x][y] == 0 {
-							helperPrint := y + 1
+			if row == 8-1 {
+				for i := 0; i < 8; i++ {
+					for j := 0; j < 8; j++ {
+						if board[i][j] == 0 {
+							helperPrint := j + 1
 							PrintNbr(helperPrint)
 						}
 					}
@@ -41,7 +37,7 @@ func seeColumn(row int, col int) {
 				seeColumn(row+1, 0)
 
 			}
-			board[row][col] = save
+			board[row][col] = previous
 
 		}
 		col++
@@ -51,13 +47,13 @@ func seeColumn(row int, col int) {
 func seeQueen(row int, col int) bool {
 
 	//check for rows
-	for i := 0; i < size; i++ {
+	for i := 0; i < 8; i++ {
 		if board[row][i] == 0 {
 			return false
 		}
 	}
 	//check for collumns
-	for i := 0; i < size; i++ {
+	for i := 0; i < 8; i++ {
 		if board[i][col] == 0 {
 			return false
 		}
@@ -76,7 +72,7 @@ func seeQueen(row int, col int) bool {
 	i = row
 	j = col
 	//check diagonals
-	for i >= 0 && j < size {
+	for i >= 0 && j < 8 {
 		if board[i][j] == 0 {
 			return false
 		}
