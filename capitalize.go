@@ -14,13 +14,14 @@ func Capitalize(s string) string {
 			if i != StrLen(s)-1 {
 				if str[i+1] >= 97 && str[i+1] <= 122 {
 					str[i+1] -= 32
+					if i != StrLen(s)-2 {
+						if str[i+1] >= 65 && str[i+1] <= 90 {
+							str[i+2] += 32
+						}
+					}
 				}
 			}
-			if i != StrLen(s)-1 {
-				if str[i+1] >= 65 && str[i+1] <= 90 {
-					str[i+1] += 32
-				}
-			}
+
 		}
 	}
 	return string(str)
