@@ -8,6 +8,11 @@ func PrintNbrBase(nbr int, base string) {
 	noValid := ""
 	negative := false
 
+	if nbr == -9223372036854775808 {
+		PrintString("-9223372036854775808")
+		return
+	}
+
 	if StrLen(base) < 2 {
 		noValid = "NV"
 	} else {
@@ -50,7 +55,5 @@ func seeNumber(nbr int, base string, negative bool) {
 	}
 
 	seeNumber(nbr/StrLen(base), base, negative)
-
 	z01.PrintRune(array[nbr%StrLen(base)])
-
 }
