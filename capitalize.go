@@ -6,22 +6,14 @@ func Capitalize(s string) string {
 		str[0] -= 32
 	}
 	for i := 0; i < StrLen(s); i++ {
-		if (str[i] >= 48 && str[i] <= 57) ||
-			(str[i] >= 97 && str[i] <= 122) ||
-			(str[i] >= 65 && str[i] <= 90) {
-
-		} else {
+		if !((str[i] >= '0' && str[i] <= '9') ||
+			(str[i] >= 'a' && str[i] <= 'z') ||
+			(str[i] >= 'A' && str[i] <= 'Z')) {
 			if i != StrLen(s)-1 {
-				if str[i+1] >= 97 && str[i+1] <= 122 {
+				if str[i+1] >= 'a' && str[i+1] <= 'z' {
 					str[i+1] -= 32
-					if i != StrLen(s)-2 {
-						if str[i+1] >= 65 && str[i+1] <= 90 {
-							str[i+2] += 32
-						}
-					}
 				}
 			}
-
 		}
 	}
 	return string(str)
