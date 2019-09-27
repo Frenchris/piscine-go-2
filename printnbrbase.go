@@ -1,6 +1,8 @@
 package piscine
 
 import (
+	"fmt"
+
 	"github.com/01-edu/z01"
 )
 
@@ -8,8 +10,8 @@ func PrintNbrBase(nbr int, base string) {
 	noValid := ""
 	negative := false
 
-	if nbr == -9223372036854775808 {
-		PrintString("-9223372036854775808")
+	if StrLen(base) == 10 {
+		fmt.Print(nbr)
 		return
 	}
 
