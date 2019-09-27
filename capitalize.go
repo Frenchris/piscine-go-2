@@ -7,9 +7,9 @@ func Capitalize(s string) string {
 	}
 
 	for i := 1; i < StrLen(s); i++ {
-		if verCharacter(str, i) {
+		if VerCharacter(str, i) {
 			if str[i] >= 'A' && str[i] <= 'Z' {
-				if verCharacter(str, i-1) {
+				if VerCharacter(str, i-1) {
 					str[i] += 32
 				}
 			}
@@ -24,7 +24,7 @@ func Capitalize(s string) string {
 	return string(str)
 }
 
-func verCharacter(str []rune, i int) bool {
+func VerCharacter(str []rune, i int) bool {
 	if (str[i] >= '0' && str[i] <= '9') ||
 		(str[i] >= 'a' && str[i] <= 'z') ||
 		(str[i] >= 'A' && str[i] <= 'Z') {
