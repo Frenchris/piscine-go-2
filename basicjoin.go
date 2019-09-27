@@ -1,6 +1,6 @@
 package piscine
 
-func basicJoin(strs []string) string {
+func BasicJoin(strs []string) string {
 
 	result := ""
 
