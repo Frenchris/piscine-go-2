@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	piscine ".."
@@ -10,7 +9,6 @@ import (
 
 func main() {
 
-	fmt.Println(piscine.ArrayStrLength(os.Args))
 	for i := 1; i < piscine.ArrayStrLength(os.Args)-1; i++ {
 		for j := i + 1; j < piscine.ArrayStrLength(os.Args); j++ {
 			if os.Args[i] > os.Args[j] {
