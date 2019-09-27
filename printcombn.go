@@ -68,7 +68,7 @@ func PrintCombina(start, n int, out string) {
 func PrintString(str string) {
 
 	aStringChangeable := []rune(str)
-	for i := 0; i < ArrayStrLength(str); i++ {
+	for i := 0; i < StrLen(str); i++ {
 
 		//if aStringChangeable[i] >= ' ' && aStringChangeable[i] <= '~' {
 		z01.PrintRune(aStringChangeable[i])
@@ -77,7 +77,7 @@ func PrintString(str string) {
 
 }
 
-func ArrayStrLength(str string) int {
+func ArrayStrLength(str []string) int {
 
 	length := 0
 
