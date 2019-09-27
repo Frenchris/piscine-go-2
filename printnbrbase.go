@@ -4,12 +4,9 @@ import (
 	"github.com/01-edu/z01"
 )
 
-var (
-	noValid string
-	ver     bool
-)
-
 func PrintNbrBase(nbr int, base string) {
+	noValid := ""
+	negative := false
 
 	if StrLen(base) < 2 {
 		noValid = "NV"
@@ -28,28 +25,32 @@ func PrintNbrBase(nbr int, base string) {
 	if noValid == "NV" {
 		PrintString(noValid)
 	} else {
-
 		if nbr < 0 {
 			nbr *= -1
-			ver = true
+			negative = true
 		}
+		seeNumber(nbr, base, negative)
+	}
 
-		array := []rune(base)
+}
 
-		if nbr >= 0 && nbr < StrLen(base) {
-			if ver {
-				z01.PrintRune('-')
-				z01.PrintRune(array[nbr])
-				return
-			}
+func seeNumber(nbr int, base string, negative bool) {
+
+	array := []rune(base)
+
+	if nbr >= 0 && nbr < StrLen(base) {
+		if negative {
+			z01.PrintRune('-')
 			z01.PrintRune(array[nbr])
 			return
-
 		}
+		z01.PrintRune(array[nbr])
+		return
 
-		PrintNbrBase(nbr/StrLen(base), base)
-
-		z01.PrintRune(array[nbr%StrLen(base)])
 	}
+
+	seeNumber(nbr/StrLen(base), base, negative)
+
+	z01.PrintRune(array[nbr%StrLen(base)])
 
 }
