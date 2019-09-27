@@ -5,7 +5,7 @@ func IsPrintable(str string) bool {
 	s := []rune(str)
 
 	for i := 0; i < StrLen(str); i++ {
-		if s[i] >= 0 && s[i] <= 31 {
+		if !(s[i] >= 33 && s[i] <= 126) {
 			return false
 		}
 	}
