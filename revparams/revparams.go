@@ -10,7 +10,7 @@ import (
 
 func main() {
 
-	for i := piscine.ArrayStrLength(os.Args); i < 0; i-- {
+	for i := piscine.ArrayStrLength(os.Args) - 1; i > 0; i-- {
 		piscine.PrintStr(os.Args[i])
 		z01.PrintRune('\n')
 	}
