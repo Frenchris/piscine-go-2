@@ -1,4 +1,4 @@
-package piscine
+package student
 
 type Pilot struct {
 	Name     string
