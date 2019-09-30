@@ -7,7 +7,9 @@ func SplitWhiteSpaces(str string) []string {
 	sArray := []rune(str)
 	for i := 0; i < StrLen(str); i++ {
 		if sArray[i] == '\n' || sArray[i] == '\t' || sArray[i] == ' ' {
-			count++
+			if !(sArray[i+1] == '\n' || sArray[i+1] == '\t' || sArray[i+1] == ' ') {
+				count++
+			}
 		}
 	}
 	result := make([]string, count+1)
@@ -22,6 +24,8 @@ func SplitWhiteSpaces(str string) []string {
 			stri = string(sArray[0:i])
 			if string(sArray[i+1]) == " " {
 				sArray = sArray[i+2 : StrLen(string(sArray))]
+				count--
+				fmt.Println(count, j)
 			} else {
 				sArray = sArray[i+1 : StrLen(string(sArray))]
 			}
@@ -37,8 +41,5 @@ func SplitWhiteSpaces(str string) []string {
 			result[j] = string(sArray[0:StrLen(string(sArray))])
 		}
 	}
-
-	fmt.Println([]rune(result[0]))
-	fmt.Println()
 	return result
 }
