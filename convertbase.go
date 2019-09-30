@@ -15,3 +15,15 @@ func ConvertBase(nbr, baseFrom, baseTo string) string {
 	}
 	return ""
 }
+
+func ConvertFromDecimal(nbr int, base string) string {
+	result := ""
+
+	for nbr >= StrLen(base) {
+		result += string(base[nbr%StrLen(base)])
+		nbr /= StrLen(base)
+	}
+	result += string(base[nbr])
+
+	return StrRev(result)
+}
