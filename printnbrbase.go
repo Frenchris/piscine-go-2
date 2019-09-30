@@ -36,12 +36,12 @@ func PrintNbrBase(nbr int, base string) {
 			nbr *= -1
 			negative = true
 		}
-		seeNumber(nbr, base, negative)
+		SeeNumber(nbr, base, negative)
 	}
 
 }
 
-func seeNumber(nbr int, base string, negative bool) {
+func SeeNumber(nbr int, base string, negative bool) {
 
 	array := []rune(base)
 
@@ -56,6 +56,6 @@ func seeNumber(nbr int, base string, negative bool) {
 
 	}
 
-	seeNumber(nbr/StrLen(base), base, negative)
+	SeeNumber(nbr/StrLen(base), base, negative)
 	z01.PrintRune(array[nbr%StrLen(base)])
 }
