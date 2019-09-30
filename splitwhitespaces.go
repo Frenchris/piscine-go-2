@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 func SplitWhiteSpaces(str string) []string {
 	count := 0
 	sArray := []rune(str)
@@ -25,10 +23,6 @@ func SplitWhiteSpaces(str string) []string {
 		if j == count {
 			result[j] = string(sArray[0:StrLen(string(sArray))])
 		}
-	}
-
-	for index := 0; index < ArrayStrLength(result); index++ {
-		fmt.Println(result[index])
 	}
 
 	return result
