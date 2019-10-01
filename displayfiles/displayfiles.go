@@ -1,7 +1,6 @@
 package main
 
 import (
-	"io/ioutil"
 	"os"
 
 	piscine ".."
@@ -19,13 +18,19 @@ func main() {
 		z01.PrintRune('\n')
 	} else if os.Args[1] == "quest8.txt" {
 
-		file, err := ioutil.ReadFile("quest8.txt")
+		fileRe, err := os.Open("quest8.txt")
+
+		stat, err := fileRe.Stat()
 		if err != nil {
 			piscine.PrintStr(err.Error())
 			return
 		}
 
-		piscine.PrintStr(string(file))
+		arr := make([]byte, stat.Size())
+
+		fileRe.Read(arr)
+
+		piscine.PrintStr(string(arr))
 		z01.PrintRune('\n')
 
 	}
