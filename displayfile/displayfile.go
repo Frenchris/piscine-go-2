@@ -20,12 +20,12 @@ func main() {
 
 		fileRe, err := os.Open("quest8.txt")
 
-		stat, err := fileRe.Stat()
-
 		if err != nil {
 			piscine.PrintStr(err.Error())
 			return
 		}
+		stat, _ := fileRe.Stat()
+
 		arr := make([]byte, stat.Size())
 
 		fileRe.Read(arr)
