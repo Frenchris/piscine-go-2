@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/01-edu/z01"
@@ -20,12 +19,7 @@ func main() {
 	} else {
 		table = parseInput()
 		if backtrack(&table) {
-			for i := 0; i < 9; i++ {
-				for j := 0; j < 9; j++ {
-					fmt.Print(table[i][j], " ")
-				}
-				fmt.Println()
-			}
+			printBoard(table)
 		} else {
 			piscine.PrintStr("Error")
 			z01.PrintRune('\n')
@@ -37,9 +31,14 @@ func main() {
 func printBoard(board [9][9]int) {
 	for row := 0; row < 9; row++ {
 		for col := 0; col < 9; col++ {
-			fmt.Printf("%d ", board[row][col])
+			if col == 8 {
+				piscine.PrintNbr(table[row][col])
+			} else {
+				piscine.PrintNbr(table[row][col])
+				z01.PrintRune(' ')
+			}
 		}
-		fmt.Println()
+		z01.PrintRune('\n')
 	}
 }
 
