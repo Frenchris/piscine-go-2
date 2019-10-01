@@ -15,16 +15,15 @@ func main() {
 	lengthArgs := piscine.ArrayStrLength(arr)
 
 	if lengthArgs != 4 {
-		fmt.Println("a")
 		return
 	}
 
-	if !piscine.IsNumeric(arr[1]) {
+	if !piscine.IsNumber(arr[1]) {
 		z01.PrintRune('0')
 		z01.PrintRune('\n')
 		return
 	}
-	if !piscine.IsNumeric(arr[3]) {
+	if !piscine.IsNumber(arr[3]) {
 		z01.PrintRune('0')
 		z01.PrintRune('\n')
 		return
@@ -59,7 +58,7 @@ func main() {
 	} else if arr[2] == "%" {
 
 		if arr[3] == "0" {
-			fmt.Print("No modulo by 0")
+			fmt.Print("No Modulo by 0")
 			z01.PrintRune('\n')
 			return
 		} else {
