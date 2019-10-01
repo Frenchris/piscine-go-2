@@ -15,27 +15,29 @@ func main() {
 
 	if nbrArguments >= 2 {
 		for i := 1; i < nbrArguments; i++ {
-			if os.Args[i] == "quest8.txt" {
-				if i+1 == nbrArguments {
-					piscine.PrintFile("quest8.txt")
-					i = nbrArguments
-					break
-				} else {
-					piscine.PrintFile("quest8.txt")
-					z01.PrintRune('\n')
-				}
-			} else if os.Args[i] == "quest8T.txt" {
-				if i+1 == nbrArguments {
-					piscine.PrintFile("quest8T.txt")
-					i = nbrArguments
-					break
-				} else {
-					piscine.PrintFile("quest8T.txt")
-					z01.PrintRune('\n')
-				}
-			} else {
-				piscine.PrintFile(os.Args[i])
+			fileRe, err := os.Open(os.Args[i])
+
+			if err != nil {
+				piscine.PrintStr(err.Error())
+				z01.PrintRune('\n')
+
+				return
 			}
+			stat, _ := fileRe.Stat()
+
+			arr := make([]byte, stat.Size())
+
+			fileRe.Read(arr)
+
+			if i+1 == nbrArguments {
+				piscine.PrintStr(string(arr))
+				z01.PrintRune('\n')
+			} else {
+				piscine.PrintStr(string(arr))
+				z01.PrintRune('\n')
+				z01.PrintRune('\n')
+			}
+
 		}
 	}
 }
