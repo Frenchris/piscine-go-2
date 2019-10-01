@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io/ioutil"
 	"os"
 
 	piscine ".."
@@ -16,28 +17,14 @@ func main() {
 	} else if lengthArgs == 1 {
 		piscine.PrintStr("File name missing")
 		z01.PrintRune('\n')
-	} else {
+	} else if os.Args[1] == "quest8.txt" {
 
-		fileWr, err := os.Create("quest8.txt")
-		if err != nil {
-			piscine.PrintStr(err.Error())
-			return
-		}
-
-		fileWr.WriteString("Almost there!!")
-
-		fileRe, err := os.Open("quest8.txt")
+		file, err := ioutil.ReadFile("quest8.txt")
 		if err != nil {
 			piscine.PrintStr(err.Error())
 		}
 
-		var arr []byte
-
-		fileRe.Read(arr)
-
-		piscine.PrintStr(string(arr))
-		fileRe.Close()
-
+		piscine.PrintStr(string(file))
 		z01.PrintRune('\n')
 
 	}
