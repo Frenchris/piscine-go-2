@@ -22,6 +22,8 @@ func main() {
 
 		if err != nil {
 			piscine.PrintStr(err.Error())
+			z01.PrintRune('\n')
+
 			return
 		}
 		stat, _ := fileRe.Stat()
