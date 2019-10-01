@@ -17,17 +17,26 @@ func main() {
 		piscine.PrintStr("File name missing")
 		z01.PrintRune('\n')
 	} else {
-		file, err := os.Open("quest8.txt")
+
+		fileWr, err := os.Create("quest8.txt")
+		if err != nil {
+			piscine.PrintStr(err.Error())
+			return
+		}
+
+		fileWr.WriteString("Almost there!!")
+
+		fileRe, err := os.Open("quest8.txt")
 		if err != nil {
 			piscine.PrintStr(err.Error())
 		}
 
 		arr := make([]byte, 14)
 
-		file.Read(arr)
+		fileRe.Read(arr)
 
 		piscine.PrintStr(string(arr))
-		file.Close()
+		fileRe.Close()
 
 		z01.PrintRune('\n')
 
