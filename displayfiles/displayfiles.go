@@ -18,14 +18,6 @@ func main() {
 		z01.PrintRune('\n')
 	} else {
 
-		fileWr, err := os.Create("quest8.txt")
-		if err != nil {
-			piscine.PrintStr(err.Error())
-			return
-		}
-
-		fileWr.WriteString("Almost there!!")
-
 		fileRe, err := os.Open("quest8.txt")
 		if err != nil {
 			piscine.PrintStr(err.Error())
