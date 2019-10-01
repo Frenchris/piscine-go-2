@@ -22,6 +22,7 @@ func main() {
 		file, err := ioutil.ReadFile("quest8.txt")
 		if err != nil {
 			piscine.PrintStr(err.Error())
+			return
 		}
 
 		piscine.PrintStr(string(file))
