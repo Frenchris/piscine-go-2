@@ -22,14 +22,15 @@ func main() {
 					piscine.PrintFile("quest8.txt")
 					z01.PrintRune('\n')
 				}
-			}
-			if os.Args[i] == "quest8T.txt" {
+			} else if os.Args[i] == "quest8T.txt" {
 				if i+1 == nbrArguments {
 					piscine.PrintFile("quest8T.txt")
 				} else {
 					piscine.PrintFile("quest8T.txt")
 					z01.PrintRune('\n')
 				}
+			} else {
+				piscine.PrintFile(os.Args[i])
 			}
 		}
 	}
