@@ -31,7 +31,7 @@ func main() {
 			piscine.PrintStr(err.Error())
 		}
 
-		arr := make([]byte, 14)
+		var arr []byte
 
 		fileRe.Read(arr)
 
