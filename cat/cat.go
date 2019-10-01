@@ -18,6 +18,7 @@ func main() {
 			if os.Args[i] == "quest8.txt" {
 				if i+1 == nbrArguments {
 					piscine.PrintFile("quest8.txt")
+					break
 				} else {
 					piscine.PrintFile("quest8.txt")
 					z01.PrintRune('\n')
@@ -25,6 +26,7 @@ func main() {
 			} else if os.Args[i] == "quest8T.txt" {
 				if i+1 == nbrArguments {
 					piscine.PrintFile("quest8T.txt")
+					break
 				} else {
 					piscine.PrintFile("quest8T.txt")
 					z01.PrintRune('\n')
