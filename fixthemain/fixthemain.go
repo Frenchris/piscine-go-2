@@ -7,6 +7,7 @@ func PrintStr(str string) {
 	for _, s := range arrayRune {
 		z01.PrintRune(s)
 	}
+	z01.PrintRune('\n')
 }
 
 type Door struct {
@@ -19,7 +20,7 @@ func CloseDoor(ptrDoor *Door) {
 }
 
 func OpenDoor(ptrDoor *Door) {
-	PrintStr("Door Openning...")
+	PrintStr("Door Opening...")
 	ptrDoor.state = "OPEN"
 }
 
