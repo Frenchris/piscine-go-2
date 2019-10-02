@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 func SortWordArr(array []string) {
 
 	for i := 0; i < ArrayStrLength(array)-1; i++ {
@@ -15,7 +13,6 @@ func SortWordArr(array []string) {
 			for k < StrLen(wordI) && l < StrLen(wordJ) {
 				if rune(wordI[k]) > rune(wordJ[l]) {
 					array[i], array[j] = array[j], array[i]
-					fmt.Println("asdasdasda")
 					k = StrLen(wordI)
 					l = StrLen(wordJ)
 
