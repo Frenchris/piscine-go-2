@@ -6,7 +6,7 @@ func Itoa(nbr int) string {
 	t := 1
 
 	if nbr < 0 {
-		result1 += "-"
+		result1 = result1 + "-"
 		t = -1
 	}
 	if nbr != 0 {
@@ -15,10 +15,11 @@ func Itoa(nbr int) string {
 			Itoa(q)
 		}
 		d := ((nbr % 10) * t) + '0'
-		result1 += string(rune(d))
+		result1 = result1 + string(rune(d))
 	} else {
-		result1 += "0"
+		result1 = result1 + "0"
 	}
-
-	return result1
+	result := result1
+	result1 = ""
+	return result
 }
