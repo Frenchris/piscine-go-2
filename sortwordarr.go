@@ -6,7 +6,8 @@ func SortWordArr(array []string) {
 		for j := i + 1; j < ArrayStrLength(array); j++ {
 			wordI := array[i]
 			wordJ := array[j]
-			if wordI[0] > wordJ[0] {
+
+			if rune(wordI[0]) > rune(wordJ[0]) {
 				array[i], array[j] = array[j], array[i]
 			}
 		}
