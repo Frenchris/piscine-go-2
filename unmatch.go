@@ -7,13 +7,11 @@ func Unmatch(arr []int) int {
 		nbrs += Itoa(arr[i])
 	}
 	for j := 0; j < ArrayIntLength(arr); j++ {
+		if CountInstances(nbrs, Itoa(j)) != -1 {
+			if !(CountInstances(nbrs, Itoa(j))%2 == 0) {
 
-		//	fmt.Println(nbrs, Itoa(j))
-		//	fmt.Println(CountInstances(nbrs, Itoa(j)))
-
-		if CountInstances(nbrs, Itoa(j)) == 1 {
-
-			return j
+				return j
+			}
 		}
 	}
 	return -1
