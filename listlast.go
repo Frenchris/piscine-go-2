@@ -8,5 +8,5 @@ func ListLast(l *List) interface{} {
 		}
 		l.Head = l.Head.Next
 	}
-	return l.Head
+	return l.Tail
 }
