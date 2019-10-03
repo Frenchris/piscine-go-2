@@ -3,7 +3,8 @@ package piscine
 func ListReverse(l *List) {
 
 	if l.Head != nil {
-		prev := &NodeL{Data: nil}
+		prev := &NodeL{}
+		prev = nil
 		curr := l.Head
 		next := &NodeL{Data: nil}
 
