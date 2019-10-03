@@ -15,6 +15,7 @@ func ListReverse(l *List) {
 			prev = curr
 			curr = next
 		}
+		l.Head.Next = nil
 		l.Tail = lastNode
 		l.Head = prev
 	}
