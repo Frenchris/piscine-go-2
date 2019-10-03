@@ -6,17 +6,17 @@ func ListReverse(l *List) {
 		prev := &NodeL{}
 		prev = nil
 		curr := l.Head
-		next := &NodeL{Data: nil}
+		next := prev
 
 		for curr != nil {
 			next = curr.Next
 			curr.Next = prev
 			prev = curr
 			curr = next
-
 		}
-		l.Tail = ListAt(prev, ListSize(l)+1)
-		l.Tail.Next = nil
-		l.Head = prev
+		temp := l.Head
+		l.Head = l.Tail
+		l.Tail = temp
+
 	}
 }
