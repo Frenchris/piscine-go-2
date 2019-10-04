@@ -36,9 +36,9 @@ func Index(s string, toFind string) int {
 		if count == 0 {
 			pos = -1
 		}
-
-		return pos
 	}
+
+	return pos
 
 }
 
