@@ -2,7 +2,7 @@ package piscine
 
 func BTreeApplyByLevel(root *TreeNode, f func(...interface{}) (int, error)) {
 
-	for i := 0; i < BTreeLevelCount(root); i++ {
+	for i := 1; i <= BTreeLevelCount(root); i++ {
 		AtLevel(root, i, f)
 	}
 }
