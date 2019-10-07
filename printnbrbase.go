@@ -30,7 +30,7 @@ func PrintNbrBase(nbr int, base string) {
 	}
 
 	if noValid == "NV" {
-		PrintString(noValid)
+		PrintStr(noValid)
 	} else {
 		if nbr < 0 {
 			nbr *= -1

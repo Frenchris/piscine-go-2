@@ -11,13 +11,3 @@ func SortIntegerTable(table []int) {
 	}
 
 }
-
-func ArrayIntLength(array []int) int {
-
-	length := 0
-	for range array {
-		length++
-	}
-	return length
-
-}

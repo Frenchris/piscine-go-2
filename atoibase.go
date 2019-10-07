@@ -26,26 +26,6 @@ func AtoiBase(s string, base string) int {
 		return 0
 	}
 
-	return printNumberAtoiBase(s, base)
-
-}
-
-func printNumberAtoiBase(nbr string, base string) int {
-
-	arrayBase := []rune(base)
-	arrayNbr := []rune(nbr)
-	result := 0
-
-	for i := 0; i < StrLen(nbr); i++ {
-		for j := 0; j < StrLen(base); j++ {
-
-			if arrayNbr[i] == arrayBase[j] {
-
-				result += j * (Power(StrLen(base), StrLen(nbr)-i-1))
-			}
-		}
-	}
-
-	return result
+	return PrintNumberAtoiBase(s, base)
 
 }

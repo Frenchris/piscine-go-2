@@ -64,26 +64,3 @@ func PrintCombina(start, n int, out string) {
 		PrintCombina(i+1, n-1, str)
 	}
 }
-
-func PrintString(str string) {
-
-	aStringChangeable := []rune(str)
-	for i := 0; i < StrLen(str); i++ {
-
-		//if aStringChangeable[i] >= ' ' && aStringChangeable[i] <= '~' {
-		z01.PrintRune(aStringChangeable[i])
-		//}
-	}
-
-}
-
-func ArrayStrLength(str []string) int {
-
-	length := 0
-
-	for range str {
-		length++
-	}
-
-	return length
-}
