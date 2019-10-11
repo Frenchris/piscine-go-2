@@ -6,7 +6,18 @@ package piscine
   ===================					      ======================
   ==================================================================*/
 
-//ConvertFromDecimal returns nbr in base indicated by base
+//PrimeNumbers returns an array of prime ints, from 2 to nbr
+func PrimeNumbers(nbr int) []int {
+	var result []int
+	for i := 2; i <= nbr; i++ {
+		if IsPrime(i) {
+			result = append(result, i)
+		}
+	}
+	return result
+}
+
+//ConvertFromDecimal returns nbr in decimal base converted to a number with a base indicated by base
 //ex: 12,"01" -> 1100
 func ConvertFromDecimal(nbr int, base string) string {
 	result := ""
@@ -55,14 +66,15 @@ func Power(n int, m int) int {
 	return n
 }
 
-var resultItoa string
+var result string
 
 //Itoa returns nbr in string type
 func Itoa(nbr int) string {
+	result = ""
 	t := 1
 
 	if nbr < 0 {
-		resultItoa += "-"
+		result += "-"
 		t = -1
 	}
 	if nbr != 0 {
@@ -71,13 +83,35 @@ func Itoa(nbr int) string {
 			Itoa(q)
 		}
 		d := ((nbr % 10) * t) + '0'
-		resultItoa += string(rune(d))
+		result += string(rune(d))
 	} else {
-		resultItoa += "0"
+		result += "0"
 	}
-	result := resultItoa
-	resultItoa = ""
+
 	return result
+}
+
+//IsOperator returns true if str is an operator, false otherwise
+func IsOperator(str string) bool {
+	if str == "+" || str == "-" || str == "*" || str == "/" || str == "%" {
+		return true
+	}
+	return false
+}
+
+//IsNumber returns true if str is a number, false otherwise
+func IsNumber(str string) bool {
+
+	if str[0] == '-' && StrLen(str) != 1 {
+		str = str[1:StrLen(str)]
+	}
+
+	for i := 0; i < StrLen(str); i++ {
+		if !(str[i] >= '0' && str[i] <= '9') {
+			return false
+		}
+	}
+	return true
 }
 
 /*==================================================================
@@ -187,6 +221,41 @@ func CountInstances(s string, toFind string) int {
 	return count2
 }
 
+func LowerCase(s string) string {
+	str := []rune(s)
+	if str[0] >= 'A' && str[0] <= 'Z' {
+		str[0] += 32
+	}
+	for i := 1; i < StrLen(s); i++ {
+		if VerCharacter(str, i) {
+			if str[i] >= 'A' && str[i] <= 'Z' {
+				if VerCharacter(str, i-1) {
+					str[i] += 32
+				}
+			}
+		} else {
+			if i != StrLen(s)-1 {
+				if str[i+1] >= 97 && str[i+1] <= 122 {
+					str[i+1] -= 32
+				}
+			}
+		}
+	}
+	return string(str)
+}
+
+//IsStrictlyString returns true if str countains only letters
+func IsStrictlyString(str string) bool {
+	s := []rune(str)
+	for i := 0; i < StrLen(str); i++ {
+		if !(s[i] >= 'a' && s[i] <= 'z' ||
+			s[i] >= 'A' && s[i] <= 'Z') {
+			return false
+		}
+	}
+	return true
+}
+
 /*==================================================================
   ===================						  ======================
   ===========					ARRAYS				 ===============
@@ -227,4 +296,28 @@ func ArrayIntLength(array []int) int {
 	}
 	return length
 
+}
+
+//RemoveFromStrArray removes from an array every instance given by charset
+func RemoveFromStrArray(array []string, charset string) []string {
+	var result []string
+	for i := 0; i < ArrayStrLength(array); i++ {
+		if array[i] != charset {
+			result = append(result, array[i])
+		}
+	}
+
+	return result
+}
+
+//CheckStrings returns false if in an array of "ints" exists any "strings"
+//ex: {"2", "6", "hello","4"} -> false
+//	  {"1", "7", "9", "1"} -> true
+func CheckStrings(arr []string) bool {
+	for i := 0; i < ArrayStrLength(arr); i++ {
+		if IsStrictlyString(arr[i]) {
+			return false
+		}
+	}
+	return true
 }
